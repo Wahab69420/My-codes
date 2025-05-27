@@ -1,12 +1,12 @@
 class Solution:
     def differenceOfSums(self, n: int, m: int) -> int:
-        num1 = []  # Stores numbers NOT divisible by m
-        num2 = []  
+        sum1 = 0  # Sum of numbers NOT divisible by m
+        sum2 = 0  # Sum of numbers divisible by m
 
-        for i in range(1, n + 1):  # Loop from 1 to n
+        for i in range(1, n + 1):
             if i % m == 0:
-                num2.append(i)  # Divisible by m
+                sum2 += i
             else:
-                num1.append(i)  # Not divisible by m
+                sum1 += i
 
-        return sum(num1) - sum(num2)
+        return sum1 - sum2
